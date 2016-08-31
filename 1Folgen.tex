@@ -1,0 +1,449 @@
+
+\chapter{Folgen}
+\section{Definition} %http://www.mathe-online.at/nml/materialien/SkriptumBlaha/KAP-10.pdf
+\begin{definition}\index{Folge!Definition}
+Als (\textbf{unendliche}) \textbf{Folge} bezeichnet man eine Auflistung von unendlich vielen Objekten (Zahlen). Das selbe Objekt kann in einer Folge mehrfach auftreten. Die Objekte werden nummeriert, das Objekt mit dem \textbf{Index} $n$ wird dabei als $n$-te Komponente oder allgemeine Komponente der Folge bezeichnet. Eine Folge von Zahlen ist eine Abbildung $f: \mathbb{N} \rightarrow \mathbb{R}$ 
+
+Ist $n$ die Anzahl der Glieder einer endlichen Folge, so spricht man von einer Folge der Länge $n$, einer $n$-gliedrigen Folge oder einem \textbf{$n$-Tupel}.
+\end{definition}
+\marginnote{Repetition: Die Menge der natürlichen Zahlen $\mathbb{N}$ umfasst die Zahlen, die uns beim Zählen von Gegenständen begegnen. Zählt man die Zahl Null auch dazu, so schreibt man $\mathbb{N}_{0}$}
+
+Folgen sind also eng mit Funktionen verwandt. Die Hauptunterschied besteht darin, dass bei Folgen die Definitionsmenge immer die Menge der natürlichen Zahlen ist.
+\section{Beispiele}
+Wir betrachten ein paar Beispiele:
+\begin{example}
+Die Folge der natürlichen Zahlen
+\[ 1,2,3,4,5,6,7,8,9,10,11,...\]
+\end{example}
+
+\begin{example}
+Die Folge der Quadratzahlen
+\[ 1,4,9,16,25,36,49,64,...\]
+\end{example}
+
+\begin{example}\index{Folge!Fibonacci}
+Die Fibonacci-Folge:
+\[ 0,1,1,2,3,5,8,13,21,34,55,89,...\]
+\end{example}
+\begin{marginfigure}
+    \includegraphics[width=5cm]{fibonacci}
+    \caption{Leonardo da Pisa, auch Fibonacci genannt (* um 1170 in Pisa; † nach 1240 in Pisa) war Rechenmeister in Pisa und gilt als einer der bedeutendsten Mathematiker des Mittelalters. Auf seinen Reisen nach Afrika, Byzanz und Syrien machte er sich mit der arabischen Mathematik vertraut und verfasste mit den dabei gewonnenen Erkenntnissen das Rechenbuch Liber ab(b)aci im Jahre 1202. Bekannt ist daraus heute vor allem die nach ihm benannte Fibonacci-Folge.} 
+\end{marginfigure}
+
+\begin{example}
+Die Folge der Primzahlen:
+\[ 2,3,5,7,11,13,17,19,23,29,31,...\]
+\end{example}
+
+\begin{example}
+Ein 6-Tupel von ganzen Zahlen:
+\[ 0,0,5,1,8,8\]
+\end{example}
+
+\section{Festlegen von Folgen}
+Es gibt folgende Möglichkeiten Folgen festzulegen:
+\subsection{Angabe aller Glieder der Folge (nur bei endlichen Folgen)}
+
+\begin{example}
+Folge der Primzahlen kleiner 15
+\begin{gelb}
+\vspace{1.5cm} %\[2,3,5,7,11,13\]
+\end{gelb}
+\end{example}
+
+
+\subsection{Angabe des erzeugenden Terms (explizites Bildungsgesetz)}
+Ist die Folge durch einen Term darstellbar, lässt sich jedes Element der Folge mit der Indexnummer berechnen.
+
+\begin{example}
+\[ n^{2} \text{ für } n \in \mathbb{N} \]
+Das Element (oder Glied) mit Nummer $n=5$ wäre hier:
+\[ 5^{2} = 25 \]
+\end{example}
+
+\subsection{Angabe durch eine Rekursionsformel}
+Das Erzeugen von Folgen erfolgt manchmal schrittweise, indem eine Vorschrift angegeben ist, nach der das
+nächstfolgende Glied aus einem oder mehreren vorangehenden Gliedern zu berechnen ist. Eine solche
+Vorschrift nennt man \textbf{Rekursions\-formel}. Zusätzlich müssen zumindest die notwendigen Anfangsglieder
+bekannt sein.
+
+\begin{example}
+\[ a_{n+1} = a_{n} + 2 ; a_{1} = -3 \]
+Dies ergibt die Folge
+\begin{gelb}
+\vspace{1.5cm}
+\end{gelb}
+\end{example}
+
+\begin{example}
+\[ a_{n+1} = a_{n} + a_{n-1} ; a_{1} = 1, a_{2} = 1 \]
+Dies ergibt die Folge
+\begin{gelb}
+\vspace{1.5cm}
+\end{gelb}
+\end{example}
+
+\section{Monotonie von Folgen} %http://www.gm.fh-koeln.de/~konen/Mathe1-WS/ZD1-Kap03.pdf
+%http://www.free-education-resources.com/www.mathematik.net//folgen/fr2s8.htm
+Wir unterscheiden vier Arten von Monotonie:
+\begin{definition}\index{Monotonie!Definition}
+Eine Folge heisst:
+
+\begin{tabular}{ll}
+\textbf{monoton wachsend}& falls für alle $n \in \mathbb{N}$ gilt: $a_{n} \leq a_{n+1}$ \\
+\textbf{streng monoton wachsend}& falls für alle $n \in \mathbb{N}$ gilt: $a_{n} < a_{n+1}$  \\
+\textbf{monoton fallend}& falls für alle $n \in \mathbb{N}$ gilt: $a_{n} \geq a_{n+1}$ \\
+\textbf{streng monoton fallend}& falls für alle $n \in \mathbb{N}$ gilt: $a_{n} > a_{n+1}$  \\
+\end{tabular}
+\end{definition}
+
+Um eine Folge auf ihre Monotonie zu untersuchen, wenden wir folgendes Verfahren an:
+\begin{enumerate}
+    \item Die Folge muss in expliziter Form gegeben sein
+    \item Zuerst wird $a_{n+1}$ berechnet
+    \item dann bildet man die Differenz $a_{n+1}-a_{n}$
+    \item Vereinfachen
+    \item Nun wird der vereinfachte Term untersucht: ist er grösser als Null, kleiner als Null, ...
+\end{enumerate}
+
+\section{Beschränktheit von Folgen}
+
+\begin{definition}\index{Beschränktheit!Definition} %http://www.free-education-resources.com/www.mathematik.net//folgen/fr2s8.htm
+Sei $n \in \mathbb{N}$. Eine Folge heisst:
+
+\begin{tabular}{ll}
+\textbf{n. oben beschränkt} & falls ein $K \in \mathbb{R}$ exis., so dass für alle $n$ gilt: $a_{n} \leq K$ \\
+\textbf{n. unten beschränkt} & falls ein $K \in \mathbb{R}$ exis., so dass für alle $n$ gilt: $a_{n} \geq K$ \\ %%%%%%%%%%%%%%%%%%%HIER WEITER!
+\end{tabular}
+\end{definition}
+
+\begin{example}
+Als Beispiel betrachten wir die Folge $a_{n} = 2n$. Um die Gleider dieser Folge zu berechnen, setzt man nacheinander die natürlichen Zahlen $(1,2,3,4,...)$ ein. Die Glieder lauten dann:
+\[ 2,4,6,8,10,12,14,... \]
+Das erste Glied dieser Folge ist  die Zahl 2. Da die Folge auch streng monoton steigend ist, wird es auch kein Glied geben, dass kleiner als 2 ist, denn die Gleider werden ja immer grösser.
+
+Man sagt, die Folge ist \textbf{nach unten beschränkt}. Die Zahl 2 nennt man eine \textbf{untere Schranke} der Folge.
+\end{example}
+
+\section{Arithmetische Folgen}\index{Folge!arithmetische}
+Bei \textbf{arithmetischen Folgen} wird von Glied zu Glied immer ein \textbf{konstanter Term addiert}. Betrachten Sie dazu das folgende Beispiel:
+\begin{example}
+Beispiel einer arithmetischen Folge mit $a_{1} = 1$ und $d=5$. 
+\begin{gelb}
+\vspace{1.5cm}
+\end{gelb}
+\end{example}
+
+\begin{definition}
+Eine arithmetische Folge ist eine regelmässige mathematische Zahlenfolge mit der Eigenschaft, dass die Differenz $d = a_{n+1} - a_{n}$ zwischen zwei benachbarten Folgenglieder konstant ist.
+\end{definition}
+
+Zu jeder arithmetischen Folge lässt sich ein explizites Bildungsgesetz der Form:
+\begin{gelb}
+\vspace{2cm}
+\end{gelb}
+bilden. Die Folge ist für $d>0$ monoton wachsend, für $d<0$ monoton fallend, in jedem Fall unbeschränkt. Jedes Folgenglied ist das arithmetische Mittel\marginnote{arithmetisches Mittel $m$ von $a$ und $b$: $m=\frac{a+b}{2}$} seiner beiden Nachbarn. Das rekursive Bildungsgesetz für arithmetische Folgen lautet:
+\begin{gelb}
+\vspace{2cm}
+\end{gelb}
+
+
+\section{Geometrische Folgen}\index{Folge!geometrische}
+Eine geometrische Folge wird durch eine Exponentialfunktion dargestellt. Von einem Glied zum nächsten wird immer ein \textbf{konstanter Term multipliziert}. Betrachten wir auch dazu zunächst ein Beispiel:
+\begin{example}
+Beispiel einer geometrischen Folge mit $a_{1}=2$ und $q=3$:
+\begin{gelb}
+\vspace{1.5cm}
+\end{gelb}
+\end{example}
+
+\begin{definition}
+Eine Folge nennen wir geometrisch, wenn der Quotient zweier aufeinander folgender Glieder konstant ist. Anders ausgedrückt: Eine Folge heisst geometrisch, wenn jedes Glied aus dem vorhergehenden durch Multiplikation mit einer Konstanten, dem Quotienten $q$, hervorgeht.
+\[ q = \frac{a_{n+1}}{a_{n}} \]
+\end{definition}
+
+Zu jeder geometrischen Folge lässt sich ein explizites Bildungsgesetz der Form:
+\begin{gelb}
+\vspace{2cm}
+\end{gelb}
+bilden. Die Folge ist für $q>1$ monoton wachsend, für $0<q<1$ monoton fallend. Ist $q<0$, so sind die Folgenglieder abwechselnd positiv und negativ. Für $|q|<1$ ist die Folge beschränkt und konvergiert gegen 0. Jedes Folgenglied ist das geometrische Mittel\marginnote{geometrisches Mittel $g$ von $a$ und $b$: $g=\sqrt{ab}$} seiner beiden Nachbarn. Das rekursive Bildungsgesetz für arithmetische Folgen lautet:
+\begin{gelb}
+\vspace{2cm}
+\end{gelb}
+
+%\begin{fullwidth}
+
+
+
+%%%% AUFGABEN
+
+\begin{exercisesK}
+
+\noindent 
+Entscheiden Sie bei den folgenden Beispielen: Arithmetische oder geometrische Folge?
+
+\twocol
+
+\begin{exercise} $5,10,20,,... $
+\begin{answer} geometrische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $3 \pi^{2}, 6 \pi^{2}, 12 \pi^{2},...$
+\begin{answer} geometrische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $\nicefrac{3}{2}, 1 ,\nicefrac{2}{3}, ... $
+\begin{answer} geometrische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $ 3 \pi^{2}, 6 \pi^{2}, 9 \pi^{2},...$
+\begin{answer}  arithmetische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $ 3,1,-1,-3,-5,...$
+\begin{answer}  arithmetische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $ 3,-3,3,... $
+\begin{answer}  geometrische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $ 5,10,15,...$
+\begin{answer}  arithmetische Folge
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $  1, \nicefrac{3}{2}, 2, \nicefrac{5}{2}, ...$
+\begin{answer}  arithmetische Folge
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+Berechnen Sie die ersten 5 Glieder
+\twocol
+
+\begin{exercise} $a_{n} = 4n -1$\begin{answer}  $3,7,11,15,19$
+\end{answer}
+\end{exercise}
+\begin{exercise} $b_{n} = -2n+3$\begin{answer} $1,-1,-3,-5,-7$ 
+\end{answer}
+\end{exercise}
+\begin{exercise} $c_{n} = n^{2} -3n$\begin{answer}   $-2,-2,0,4,10$
+\end{answer}
+\end{exercise}
+\begin{exercise}  $d_{n} = (n+1)^{-1}$\begin{answer}  $\frac{1}{2},\frac{1}{3}, \frac{1}{4},\frac{1}{5},\frac{1}{6}$
+\end{answer}
+\end{exercise}
+\begin{exercise} $a_{n} = 2^{n-1}$\begin{answer} $1,2,4,8,16$ 
+\end{answer}
+\end{exercise}
+\begin{exercise} $b_{n} = 2^{n}-1$\begin{answer}  $1,3,7,15,31$
+\end{answer}
+\end{exercise}
+\begin{exercise}  $c_{n} = 2^{n}-n^{2}$\begin{answer}  $1,0,-1,0,7$
+\end{answer}
+\end{exercise}
+\begin{exercise} $d_{n} = \frac{2^{n+1}}{2^{n-1}}$\begin{answer}  $4,4,4,4,4$
+\end{answer}
+\end{exercise}
+\begin{exercise}  $a_{n} = \frac{1}{n}-\frac{1}{n+1}$\begin{answer} $\frac{1}{2},\frac{1}{6},\frac{1}{12},\frac{1}{20},\frac{1}{30}$  
+\end{answer}
+\end{exercise}
+\begin{exercise}  $b_{n} = \frac{1}{n(n+1)}$\begin{answer}  $\frac{1}{2},\frac{1}{6},\frac{1}{12},\frac{1}{20},\frac{1}{30}$
+\end{answer}
+\end{exercise}
+\begin{exercise}  $c_{n} = \frac{n^{3}+1}{n+1}$\begin{answer}  $1,3,7,13,21$
+\end{answer}
+\end{exercise}
+\begin{exercise}  $d_{n} = \frac{n^{4}+n^{2}+1}{7}$\begin{answer}  $\frac{3}{7},3,13,39,93$
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+\begin{exercise} Berechnen Sie $a_{1}$ und $a_{7}$ \ \ \ \ \ $a_{3}=7$, $a_{n+1}=a_{n}+n$\begin{answer}  $a_{1}=4$ und $a_{7}=25$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} Berechnen Sie $b_{0}$, $b_{1}$ und $b_{6}$ \ \ \ \ \ $b_{3} = 30$, $b_{n+1}=(n+1)b_{n}$\begin{answer}  $b_{0}=5$, $b_{1}=5$ und $b_{6}=3600$
+\end{answer}
+\end{exercise}
+
+\begin{exercise}Berechnen Sie das 6. Glied:
+$a_{1} = 1, a_{2} = 3, a_{n+1}= a_{n-1} + a_{n}$ \begin{answer}  $a_{6}=18$
+\end{answer}
+\end{exercise}
+
+Von einer Folge kennen Sie $a_{10}=12$ und $a_{18}=192$. Berechnen Sie $a_{14}$ und $a_{16}$ unter der Voraussetzung, dass die Zahlen
+\twocol
+\begin{exercise} eine arithmetische Folge sind \begin{answer} $a_{14}= 102$, $a_{16}=147$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} eine geometrische Folge sind \begin{answer} $a_{14}= 48$, $a_{16}=96$
+\end{answer}
+\end{exercise}
+
+
+\endtwocol
+
+Definieren Sie die Folge sowohl explizit als auch rekursiv.
+\twocol
+\begin{exercise} $1,4,7,10,13,...$\begin{answer}  $a_{n}=3n-2$ \\ $a_{n+1}=a_{n}+3$, $a_{1}=1$
+\end{answer}
+\end{exercise}
+\begin{exercise} $6,13,20,27,34,...$\begin{answer}  $a_{n}=7n-1$ \\ $a_{n+1}=a_{n}+7$, $a_{1}=6$
+\end{answer}
+\end{exercise}
+\begin{exercise} $6,12,24,48,96,...$\begin{answer}  $a_{n}=3 \cdot 2^{n}$ \\ $a_{n+1}=2 \cdot a_{n}$, $a_{1}=6$
+\end{answer}
+\end{exercise}
+\begin{exercise} $2^2, 2^3, 2^4, 2^5,...$\begin{answer}  $a_{n}=2^{n+1}$ \\ $a_{n+1}=2 \cdot a_{n}$, $a_{1}=4$
+\end{answer}
+\end{exercise}
+\begin{exercise} $3,33,333,3333,33333,...$\begin{answer}  $a_{n}=\frac{10^{n}-1}{3}$ \\ $a_{n+1}=10 \cdot a_{n}+3$, $a_{1}=3$
+\end{answer}
+\end{exercise}
+\begin{exercise} $6,24,120,720,5040,...$\begin{answer}  $a_{n}=(n+2)!$ \\ $a_{n+1}=(n+3) \cdot a_{n}$, $a_{1}=6$ 
+\end{answer}
+\end{exercise}
+\endtwocol
+
+Definieren Sie die Folge sowohl explizit als auch rekursiv.
+\twocol
+\begin{exercise} $a_{1}=3$, $a_{2} = 7$. Jedes Glied der Folge ist gleich dem arithmetischen Mittel seiner beiden Nachbarglieder\begin{answer}  $a_{n} = 4n-1$ \\ $a_{n+1}=a_{n} + 4$, $a_{1}=3$ 
+\end{answer}
+\end{exercise}
+\begin{exercise} $w_{n}$ ist die Winkelsumme in einem $n$-Eck ($n \geq3$)\begin{answer}  $w_{n} = (n-2) \cdot \SI{180}{\degree}$ \\ $w_{n+1}=w_{n} + \SI{180}{\degree}$, $w_{3}=\SI{180}{\degree}$
+\end{answer}
+\end{exercise}
+\begin{exercise} $a_{n}$ ist die Anzahl Geraden, die man durch $n$ Punkte höchstens legen kann ($n \geq 2$).\begin{answer}   $a_{n} = \frac{2(n-2)}{2}$ \\ $a_{n+1}=a_{n} \cdot \frac{n+1}{n-1}$, $a_{2}=1$
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+\twocol
+\begin{exercise} Ist die Folge $a_{n} = \frac{1}{n+1}$ streng monoton fallend?\begin{answer}  ist streng monoton fallend
+\end{answer}
+\end{exercise}
+
+
+\begin{exercise} Ist die Folge $a_{n} = \frac{n^{2}}{2n -2}$ monoton steigend? \begin{answer}  ist monoton steigend
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+Berechnen Sie $k$ der arithmetischen Folge:
+\twocol
+\begin{exercise} $a_{1}=5$, $a_{5}=1$ \begin{answer}  $k=-1$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{2}=2$, $a_{5}=80$ \begin{answer}  $k=26$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{200}=158$, $a_{281}=258$ \begin{answer}  $k=\frac{100}{81}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=-8$, $a_{7}=8$ \begin{answer}  $k=2.125$
+\end{answer}
+\end{exercise}
+\endtwocol
+
+Untersuchen Sie die folgenden Folgen auf Beschränktheit und begründen Sie anhand der Definition.
+
+\twocol
+
+\begin{exercise}$a_{n} = \frac{n}{n+1}$ \begin{answer}  ist nach unten ($S=\nicefrac{1}{2}$) und nach oben ($S=1$) beschränkt
+\end{answer}
+\end{exercise}
+
+\begin{exercise}$a_{n} = \sqrt{n^{2}+n} $ \begin{answer}  ist nur nach unten ($S=\sqrt{2}$) beschränkt
+\end{answer}
+\end{exercise}
+
+\begin{exercise}$a_{n} = n^{2} -n^{3} $ \begin{answer}  ist nur nach oben ($S=0$) beschränkt
+\end{answer}
+\end{exercise}
+
+\begin{exercise}$a_{n} = n^{2}\cdot 3^{-n} $ \begin{answer}   ist nach unten ($S=0$) und nach oben ($S=\nicefrac{1}{3}$) beschränkt
+\end{answer}
+\end{exercise}
+
+\endtwocol
+
+Stellen Sie die explizite und die rekursive Formel für die gegebenen Folgenglieder auf:
+\twocol
+
+\begin{exercise} $a_{0}=1, a_{1}=3 ,a_{2}=5 ,a_{3}=7 , a_{4}=9 $ \begin{answer}
+$a_{n+1} = a_{n}+2$ mit $a_{0}=1$, $a_{n}=1+2n$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=3, a_{1}=6 ,a_{2}=12 ,a_{3}=24 , a_{4}=48 $ \begin{answer}
+$a_{n+1} = 2a_{n}$ mit $a_{0}=3$, $a_{n}=3\cdot 2^{n}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=2, a_{1}=6 ,a_{2}= 18,a_{3}=54 , a_{4}=162 $ \begin{answer}
+$a_{n+1} = 3a_{n}$ mit $a_{0}=2$, $a_{n}=2\cdot 3^{n}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=2, a_{1}=5 ,a_{2}=10 ,a_{3}=17 , a_{4}=26 $ \begin{answer}
+$a_{n+1} = a_{n}+2n+3$ mit $a_{0}=2 $, $a_{n}=(n+1)^{2}+1$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=0, a_{1}=\frac{1}{2} ,a_{2}= \frac{2}{3},a_{3}=\frac{3}{4} , a_{4}=\frac{4}{5} $ \begin{answer}
+$a_{n+1} = a_{n} + \frac{1}{(n+1)(n+2)}$ mit $a_{0}=0 $, $a_{n}=\frac{n}{n+1}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=1, a_{1}= \frac{2}{3},a_{2}=\frac{4}{9} ,a_{3}=\frac{7}{27} , a_{4}= \frac{16}{81}$ \begin{answer}
+$a_{n+1} =\frac{2}{3} a_{n}$ mit $a_{0}=1 $, $a_{n}=\left( \frac{2}{3} \right)^{n}$ 
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=-1, a_{1}=1 ,a_{2}=\frac{7}{5} ,a_{3}=\frac{11}{7} , a_{4}=\frac{5}{3} $ \begin{answer}
+$a_{n+1} = a_{n} + \frac{6}{(2n+3)(2n+1)}$ mit $a_{0}=-1 $, $a_{n}=\frac{4n-1}{2n+1}$
+\end{answer}
+\end{exercise}
+
+\begin{exercise} $a_{0}=0, a_{1}=\frac{1}{3} ,a_{2}=\frac{4}{9} ,a_{3}= \frac{1}{3}, a_{4}= \frac{16}{81}$ \begin{answer}
+$a_{n+1} = \frac{1}{3} \left( \frac{n+1}{n} \right)^{2} a_{n}$ für $n \geq 1$ mit $a_{1} = 1$ und $a_{0}= $, $a_{n}=\frac{n^{2}}{3^{n}}$
+\end{answer}
+\end{exercise}
+\endtwocol
+
+%% Aufgaben von https://www.sharelatex.com/project/52145409fb40dc50160d1d68
+
+\end{exercisesK}
+
+
+%\end{fullwidth}}
+
+    
+
+
+%http://www.mathe-online.at/mathint/grenz/i.html
+%http://www.mathe-online.at/nml/materialien/SkriptumBlaha/KAP-10.pdf
+
+%http://www.mathesite.de/pdf/folge.pdf
+%http://www.mathe-aufgaben.de/mathecd/4_Funktionen/40_Folgen/40012%20Zahlenfolgen%202%20SODOL.pdf
+
+
+
+
+
